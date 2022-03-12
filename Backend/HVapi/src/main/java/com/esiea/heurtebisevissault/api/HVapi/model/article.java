@@ -9,16 +9,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "article")
+@Table(name = "articles")
 public class article {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	//private long fichiercat.categorieId;
-	private Calendar date;
 	private String contenu;
 	private String auteur;
+	private String date;
 	
 	public Long getId() {
 		return id;
@@ -44,13 +44,7 @@ public class article {
 		this.contenu = contenu;
 	}
 	
-	public Calendar date() {
-		return date;
-	}
-	
-	public void setdate(Calendar date) {
-		this.date = date;
-	}
+
 	
 	public String getauteur() {
 		return auteur;
@@ -58,6 +52,26 @@ public class article {
 	
 	public void setauteur(String auteur) {
 		this.auteur = auteur;
+	}
+	
+	public String getdate() {
+		return date;
+	}
+	
+	public void setdate(String date) {
+		this.date = date;
+	}
+	public article() {
+		
+	}
+	
+	public article(Long id,String name,String contenu,String auteur,String date) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.contenu = contenu;
+		this.auteur = auteur;
+		this.date = date;
 	}
 	
 }

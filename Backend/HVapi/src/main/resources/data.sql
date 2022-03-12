@@ -1,8 +1,10 @@
-CREATE TABLE article (
+CREATE TABLE articles (
   id BIGINT AUTO_INCREMENT  PRIMARY KEY,
   name VARCHAR(250) NOT NULL,
   contenu VARCHAR(250) NOT NULL,
-  date date NOT NULL);
+  auteur VARCHAR(250) NOT NULL,
+  date VARCHAR(250) NOT NULL);
   
   
-INSERT INTO article (name, contenu, date) VALUES  ('Article1', 'Ceci est le premier article', (TO_DATE('17/12/2015', 'DD/MM/YYYY')));
+INSERT INTO articles (name, contenu, auteur, date) VALUES  
+('Article1', 'Ceci est le premier article','auteurtest1','17/12/2015');
