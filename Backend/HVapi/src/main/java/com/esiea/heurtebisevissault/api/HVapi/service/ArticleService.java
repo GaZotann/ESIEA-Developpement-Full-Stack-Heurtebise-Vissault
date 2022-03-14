@@ -38,4 +38,16 @@ public class ArticleService {
 			throw new NotFoundException();
 		}
 	}
+	
+	public article save(article article) {
+		return articleRepository.save(article);
+	}
+	
+	public void deleteArticle(Long id) {
+		articleRepository.deleteById(id);
+	}
+
+	public article update(article article) {
+		 return articleRepository.save(article);
+	}
 }

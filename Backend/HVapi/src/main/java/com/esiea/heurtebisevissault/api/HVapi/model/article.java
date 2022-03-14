@@ -1,12 +1,16 @@
 package com.esiea.heurtebisevissault.api.HVapi.model;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "articles")
@@ -19,6 +23,11 @@ public class article {
 	private String contenu;
 	private String auteur;
 	private String date;
+	
+	@ManyToMany(
+            mappedBy = "articles"
+            )
+    private List<Category> categories = new ArrayList<>();
 	
 	public Long getId() {
 		return id;
@@ -61,17 +70,26 @@ public class article {
 	public void setdate(String date) {
 		this.date = date;
 	}
-	public article() {
+	/*public article() {
 		
-	}
+	}*/
 	
-	public article(Long id,String name,String contenu,String auteur,String date) {
+	public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+	
+	/*public article(Long id,String name,String contenu,String auteur,String date,List<Category>categories) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.contenu = contenu;
 		this.auteur = auteur;
 		this.date = date;
-	}
+		this.categories = categories;
+	}*/
 	
 }
