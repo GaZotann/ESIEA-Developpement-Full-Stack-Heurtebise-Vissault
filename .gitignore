@@ -1,3 +1,25 @@
 #Maven
 
 Backend/HVapi/target/
+
+# dependencies
+frontend/delta/node_modules
+frontend/delta/.pnp
+frontend/delta/.pnp.js
+
+# testing
+frontend/delta/coverage
+
+# production
+frontend/delta/build
+
+# misc
+frontend/delta/.DS_Store
+frontend/delta/.env.local
+frontend/delta/.env.development.local
+frontend/delta/.env.test.local
+frontend/delta/.env.production.local
+
+frontend/delta/npm-debug.log*
+frontend/delta/yarn-debug.log*
+frontend/delta/yarn-error.log*
