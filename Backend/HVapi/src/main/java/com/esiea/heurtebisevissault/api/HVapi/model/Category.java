@@ -63,6 +63,19 @@ public class Category {
 		this.name = name;
 	}
 	
+	public List<article> getarticles() {
+        return articles;
+    }
+
+    public void setarticles(List<article> articles) {
+        this.articles = articles;
+    }
+
+    public void addarticle(article article) {
+        this.articles.add(article);
+        article.getCategories().add(this);
+    }
+	
 	/*public void readArticle(article article) {
 		article.getCategories().;
 	}*/

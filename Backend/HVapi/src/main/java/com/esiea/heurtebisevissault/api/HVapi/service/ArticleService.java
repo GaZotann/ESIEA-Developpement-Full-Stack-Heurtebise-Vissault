@@ -50,4 +50,9 @@ public class ArticleService {
 	public article update(article article) {
 		 return articleRepository.save(article);
 	}
+	
+	public Optional<article> getEntityarticle(Long id) {
+        return articleRepository.findById(id);
+        
+    }
 }
