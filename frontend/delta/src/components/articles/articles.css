@@ -1,0 +1,57 @@
+.articles {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.article__title {
+    text-transform: uppercase;
+    color: white;
+}
+
+.articles__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.articles__item {
+    width: 230px;
+    height: auto;
+    border: 2px solid #00ff80;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 1px 2px 3px #c3c3c3;
+}
+
+.article__subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+}
+
+.articles__deleteButton {
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(144deg, rgb(0,255,128), rgb(0,255,255));
+    box-shadow: 1px 2px 3px #c3c3c3;
+}
+
+.articles__deleteButton:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.articles__deleteButton:active {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* reminder for responsiveness */
+
+@media screen and (max-width: 900px) {
+}
