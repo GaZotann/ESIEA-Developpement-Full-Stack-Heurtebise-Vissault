@@ -1,7 +1,7 @@
 # ESIEA-Developpement-Full-Stack-Heurtebise-Vissault
 
-Backend : 50% Gaëtan, 50% Jérémy
-Frontend: 50% Gaëtan, 50% Jérémy 
+- Backend : 50% Gaëtan, 50% Jérémy
+- Frontend: 50% Gaëtan, 50% Jérémy 
 
 Backend: 
   - Voir les articles, catégories, Articles by id, articles by name, catégorie by id, article in catégorie
