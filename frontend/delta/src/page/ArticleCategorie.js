@@ -1,46 +1,43 @@
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-import logo from './logo.svg';
-import './App.css';
+import './ArticleCategorie.css';
 
-import Navigation from './components/navigation/navigation';
-import Articles from './components/articles/articles';
-import Categories from './components/categorie/categorie';
-import Newarticle from './components/newarticles/Newarticle';
-import Newcategorie from './components/newcategorie/Newcategorie';
-import Header from './components/Header';
+import Navigation from '../components/navigation/navigation';
+import Articles from '../components/articles/articles';
+import Categories from '../components/categorie/categorie';
+import Newarticle from '../components/newarticles/Newarticle';
+import Newcategorie from '../components/newcategorie/Newcategorie';
+import Header from '../components/Header';
 
-import "./components/navigation/navigation.css"
-import './components/articles/articles.css';
-import './components/categorie/categorie.css';
-import './components/newarticles/newarticle.css'
-import './components/newcategorie/newcategorie.css'
+import "../components/navigation/navigation.css"
+import '../components/articles/articles.css';
+import '../components/categorie/categorie.css';
+import '../components/newarticles/newarticle.css'
+import '../components/newcategorie/newcategorie.css'
 
-
-
-function App() {
-
-  const [toDelete, setToDelete] = useState({deleting: false});
-  const [toDeleteCategorie, setToDeleteCategorie] = useState({deletingCategorie: false});
-  const [posting, setPosting] = useState(false);
-  const [postingCategorie, setPostingCategorie] = useState(false);
-  const [inputInvalid, setInputInvalid] = useState(false);
-  const [inputInvalidCategorie, setInputInvalidCategorie] = useState(false);
-  let test = [];
-  // check if url uses a secured protocol
-  const sampleUrl = "https://via.placeholder.com/200/e9fff4";
-  function validateUrl(url) {
+export default function Page_Categorie(){
+    var str =document.location.href; 
+    var url = new URL(str);
+    var idCategorie = url.searchParams.get("id");
+    var nameCategorie = url.searchParams.get("name");
+    
+    const [toDelete, setToDelete] = useState({deleting: false});
+    const [toDeleteCategorie, setToDeleteCategorie] = useState({deletingCategorie: false});
+    const [posting, setPosting] = useState(false);
+    const [postingCategorie, setPostingCategorie] = useState(false);
+   const [inputInvalid, setInputInvalid] = useState(false);
+   const [inputInvalidCategorie, setInputInvalidCategorie] = useState(false);
+   const [allCategories, setCategories] = useState([]);
+   const sampleUrl = "https://via.placeholder.com/200/e9fff4";
+   function validateUrl(url) {
     const parsed = new URL(url);
     return ["https:", "http:"].includes(parsed.protocol);
   }
-
-  //<-----------------------------------------------------------------articles---------------------------------------------------->
-  
   const [allarticles, setarticles] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9000/article')
+    fetch(`http://localhost:9000/${idCategorie}/article`)
     .then(res => res.json())
     .then(data => {
       setarticles(data);
@@ -85,11 +82,9 @@ function App() {
       .catch(e => console.log(e.toString()));
     }
   }, [toDelete])
-  //<-----------------------------------------------------------------articles---------------------------------------------------->
 
-  
   return (
-    <div className="App">
+    <div className="ArticleCategorie">
       <Header />
       <main>
         <Navigation
@@ -105,6 +100,6 @@ function App() {
       </main>
     </div>
   );
-}
 
-export default App;
+
+}

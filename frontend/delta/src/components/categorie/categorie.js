@@ -1,38 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default function categories(props) {
-    let liste = [];
-    let k=0;
-    while(true){
-        if(props.data[k] == null){
-            break;
-        }  
-        fetch(`http://localhost:9000/${props.data[k].id}/article`)
-        .then(res => res.json())
-        .then(data => {
-            let l = 0;
-            while(true){
-                if(data[l] == null)
-                    break;
-                liste.push(data[l].name);
-                l++;
-            }
-            console.log(liste);
-            return liste;
-            //console.log(data);
-        })
-        k++;
-    }
-    
-
-    console.log(liste);
-
+export default function Categories(props) {
+    const navigate = useNavigate();
     const categorieElements = props.data.map(i => <div 
         key={i.id} 
         className={ 'categories__item'}
     >
-        <h3 className='categorie__subtitle'>Nom de la categories : {i.name}</h3>
-        <p style={{fontSize: "14px",color: "white"}} >article : {} </p>
+        <h3 className='categorie__subtitle'>Nom de la categorie : {i.name}</h3>
 
         
         
@@ -40,13 +15,20 @@ export default function categories(props) {
             className={"categories__deleteButton"} 
             onClick={event => props.deletecategorie(event, i.id)} /* we need a callback to pass a parameter to our event handler */
         >Delete</button>
+
+        
+        <button 
+            className={"categories__liste"}
+            onClick={event =>{navigate("/Article_in_categorie?id=" + i.id + "&name=" + i.name);}}
+        >Liste des articles</button>
+
     </div>)
 
     return (
-        <div className="products">
-            <h2 className='products__title'>Produits disponibles</h2>
+        <div className="categorie">
+            <h2 className='categorie__title'>catégories disponibles</h2>
 
-            <div className='products__container'>
+            <div className='categorie__container'>
                 {categorieElements}
             </div>
         </div>

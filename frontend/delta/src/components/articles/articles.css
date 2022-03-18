@@ -18,7 +18,7 @@
 .articles__item {
     width: 230px;
     height: auto;
-    border: 2px solid #00ff80;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
     padding: 1rem;
     margin: 1rem;
@@ -36,7 +36,7 @@
     height: 30px;
     border: none;
     border-radius: 5px;
-    background: linear-gradient(144deg, rgb(0,255,128), rgb(0,255,255));
+    background: linear-gradient(144deg, rgb(225,225,225), rgb(25,25,25));
     box-shadow: 1px 2px 3px #c3c3c3;
 }
 

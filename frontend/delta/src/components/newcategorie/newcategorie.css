@@ -1,4 +1,4 @@
-.newarticle__form {
+.newcategorie__form {
     width: 300px;
     min-height: 330px;
     margin: 3rem auto;
@@ -12,27 +12,27 @@
     align-items: center;
 }
 
-.newarticle__title {
+.newcategorie__title {
     margin: 0;
     text-transform: uppercase;
     color: white;
 }
 
-.newarticle__container {
+.newcategorie__container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     color: white
 }
 
-.newarticle__input {
+.newcategorie__input {
     width: 150px;
     padding: 0.5rem 0 0.5rem 0.5rem;
     border: 2px rgb(100,100,100) solid;
     border-radius: 5px;
 }
 
-.newarticle__description {
+.newcategorie__description {
     width: 280px;
     height: 110px;
     padding: 0.5rem;
@@ -41,7 +41,7 @@
     border-radius: 5px;
 }
 
-.newarticle__submitButton {
+.newcategorie__submitButton {
     width: 100px;
     height: 30px;
     border: none;
@@ -50,12 +50,12 @@
     box-shadow: 1px 2px 3px #c3c3c3;
 }
 
-.newarticle__submitButton:hover {
+.newcategorie__submitButton:hover {
     transform: translateY(-2px);
     cursor: pointer;
 }
 
-.newarticle__submitButton:active {
+.newcategorie__submitButton:active {
     transform: translateY(2px);
     box-shadow: none;
 }
