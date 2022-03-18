@@ -11,6 +11,6 @@ Backend:
   - ajouter un article à une catégorie
 
 Frontend 
-  -voir articles, catégories, article in catégorie
-  -poster article/catégorie
-  -supprimer article/catégorie
+  - voir articles, catégories, article in catégorie
+  - poster article/catégorie
+  - supprimer article/catégorie
